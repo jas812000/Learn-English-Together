@@ -9,7 +9,12 @@
 <body>
   <header class="header">
     <div class="container">
+      <!-- Thai -->
+      <h1>ผักผลไม้</h1>
+      <p class="muted">เลือกคำศัพท์เกี่ยวกับผักและผลไม้</p>
+      <!-- English -->
       <h1>Produce</h1>
+      <p class="muted">Practice fruits and vegetables</p>
       <p class="muted"><a href="../index.html">← Supermarket</a> • <a href="../../index.html">Home</a></p>
     </div>
   </header>
@@ -27,13 +32,10 @@
       { word: "Lettuce", img: "lettuce.png", audio: "lettuce.mp3" }
     ];
     function addCard({ word, img, audio }) {
-      const div = document.createElement("div");
-      div.className = "card";
-      div.innerHTML = `
-        <figure><img src="img/${img}" alt="${word}"></figure>
-        <div class="label"><span class="word">${word}</span>
-        <button class="speak" data-audio="${word}">🔊</button></div>
-        <audio id="audio-${word}"><source src="audio/${audio}" type="audio/mpeg"></audio>`;
+      const div = document.createElement("div"); div.className = "card";
+      div.innerHTML = `<figure><img src="img/${img}" alt="${word}"></figure>
+        <div class="label"><span class="word">${word}</span><button class="speak" data-audio="${word}">🔊</button></div>
+        <audio id="audio-${word}" preload="auto"><source src="audio/${audio}" type="audio/mpeg"></audio>`;
       document.getElementById("cards").appendChild(div);
     }
     ITEMS.forEach(addCard);
