@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>English Practice Zone — Thousands (1,000–9,000)</title>
+  <link rel="stylesheet" href="../../assets/site.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Thousands (1,000–9,000)</h1>
+      <p class="muted"><a href="../index.html">← Numbers</a> • <a href="../../index.html">Home</a></p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid cards" id="cards"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> English Practice Zone</div>
+  </footer>
+
+  <script>
+    // 1,000–9,000 by thousands: filenames 1000.png..9000.png and 1000.mp3..9000.mp3
+    const ITEMS = [
+      [1000, "one thousand"], [2000, "two thousand"], [3000, "three thousand"],
+      [4000, "four thousand"], [5000, "five thousand"], [6000, "six thousand"],
+      [7000, "seven thousand"], [8000, "eight thousand"], [9000, "nine thousand"]
+    ];
+
+    for (const [n, w] of ITEMS) {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `
+        <figure><img src="img/${n}.png" alt="${w}"></figure>
+        <div class="label">
+          <span class="word">${w}</span>
+          <button class="speak" data-audio="${n}" aria-label="Play ${w}">🔊</button>
+        </div>
+        <audio id="audio-${n}" preload="auto">
+          <source src="audio/${n}.mp3" type="audio/mpeg">
+        </audio>
+      `;
+      document.getElementById("cards").appendChild(div);
+    }
+  </script>
+  <script src="../../assets/site.js"></script>
+</body>
+</html>
