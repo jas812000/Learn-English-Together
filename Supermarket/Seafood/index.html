@@ -9,7 +9,12 @@
 <body>
   <header class="header">
     <div class="container">
+      <!-- Thai -->
+      <h1>อาหารทะเล</h1>
+      <p class="muted">ฝึกคำศัพท์เกี่ยวกับอาหารทะเล</p>
+      <!-- English -->
       <h1>Seafood</h1>
+      <p class="muted">Practice seafood vocabulary</p>
       <p class="muted"><a href="../index.html">← Supermarket</a> • <a href="../../index.html">Home</a></p>
     </div>
   </header>
@@ -19,20 +24,18 @@
 
   <script>
     const ITEMS = [
-      { word: "Fish", img: "fish.png", audio: "fish.mp3" },
+      { word: "Fish",   img: "fish.png",   audio: "fish.mp3" },
       { word: "Shrimp", img: "shrimp.png", audio: "shrimp.mp3" },
       { word: "Salmon", img: "salmon.png", audio: "salmon.mp3" },
-      { word: "Tuna", img: "tuna.png", audio: "tuna.mp3" },
-      { word: "Crab", img: "crab.png", audio: "crab.mp3" },
-      { word: "Prawn", img: "prawn.png", audio: "prawn.mp3" }
+      { word: "Tuna",   img: "tuna.png",   audio: "tuna.mp3" },
+      { word: "Crab",   img: "crab.png",   audio: "crab.mp3" },
+      { word: "Prawn",  img: "prawn.png",  audio: "prawn.mp3" }
     ];
     function addCard({ word, img, audio }) {
       const div = document.createElement("div"); div.className = "card";
-      div.innerHTML = `
-        <figure><img src="img/${img}" alt="${word}"></figure>
-        <div class="label"><span class="word">${word}</span>
-        <button class="speak" data-audio="${word}">🔊</button></div>
-        <audio id="audio-${word}"><source src="audio/${audio}" type="audio/mpeg"></audio>`;
+      div.innerHTML = `<figure><img src="img/${img}" alt="${word}"></figure>
+        <div class="label"><span class="word">${word}</span><button class="speak" data-audio="${word}">🔊</button></div>
+        <audio id="audio-${word}" preload="auto"><source src="audio/${audio}" type="audio/mpeg"></audio>`;
       document.getElementById("cards").appendChild(div);
     }
     ITEMS.forEach(addCard);
