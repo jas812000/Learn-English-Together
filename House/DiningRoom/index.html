@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>English Practice Zone — Dining Room</title>
+  <link rel="stylesheet" href="../../assets/site.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Dining Room</h1>
+      <p class="muted"><a href="../index.html">← House</a> • <a href="../../index.html">Home</a></p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid cards" id="cards"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> English Practice Zone</div>
+  </footer>
+
+  <script>
+    // List of dining room items with matching image/audio filenames
+    const ITEMS = [
+      { word: "dining table", img: "dining-table.png", audio: "dining-table.mp3" },
+      { word: "chair", img: "chair.png", audio: "chair.mp3" },
+      { word: "plate", img: "plate.png", audio: "plate.mp3" },
+      { word: "glass", img: "glass.png", audio: "glass.mp3" },
+      { word: "fork", img: "fork.png", audio: "fork.mp3" }
+    ];
+
+    function addCard({ word, img, audio }) {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `
+        <figure><img src="img/${img}" alt="${word}"></figure>
+        <div class="label">
+          <span class="word">${word}</span>
+          <button class="speak" data-audio="${word}">🔊</button>
+        </div>
+        <audio id="audio-${word}" preload="auto">
+          <source src="audio/${audio}" type="audio/mpeg">
+        </audio>
+      `;
+      document.getElementById("cards").appendChild(div);
+    }
+
+    ITEMS.forEach(addCard);
+  </script>
+  <script src="../../assets/site.js"></script>
+</body>
+</html>
