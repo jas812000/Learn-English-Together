@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>English Practice Zone — Single Digits (1–9)</title>
+  <link rel="stylesheet" href="../../assets/site.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Single Digits (1–9)</h1>
+      <p class="muted"><a href="../index.html">← Numbers</a> • <a href="../../index.html">Home</a></p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid cards" id="cards"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> English Practice Zone</div>
+  </footer>
+
+  <script>
+    // 1–9: filenames should be 1.png..9.png and 1.mp3..9.mp3
+    const ITEMS = [
+      { n: 1, w: "one" }, { n: 2, w: "two" }, { n: 3, w: "three" },
+      { n: 4, w: "four" }, { n: 5, w: "five" }, { n: 6, w: "six" },
+      { n: 7, w: "seven" }, { n: 8, w: "eight" }, { n: 9, w: "nine" }
+    ];
+
+    function addCard({ n, w }) {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `
+        <figure><img src="img/${n}.png" alt="${w}"></figure>
+        <div class="label">
+          <span class="word">${w}</span>
+          <button class="speak" data-audio="${n}" aria-label="Play ${w}">🔊</button>
+        </div>
+        <audio id="audio-${n}" preload="auto">
+          <source src="audio/${n}.mp3" type="audio/mpeg">
+        </audio>
+      `;
+      document.getElementById("cards").appendChild(div);
+    }
+
+    ITEMS.forEach(addCard);
+  </script>
+  <script src="../../assets/site.js"></script>
+</body>
+</html>
