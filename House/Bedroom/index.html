@@ -15,42 +15,16 @@
   </header>
 
   <main class="container">
-    <div class="grid cards" id="cards"></div>
+    <nav class="grid links">
+      <a class="link-card" href="Furniture/index.html"><span>Furniture</span><span>➜</span></a>
+      <a class="link-card" href="Bedding/index.html"><span>Bedding</span><span>➜</span></a>
+      <a class="link-card" href="Storage/index.html"><span>Storage</span><span>➜</span></a>
+      <a class="link-card" href="Lighting-Decor/index.html"><span>Lighting & Decor</span><span>➜</span></a>
+      <a class="link-card" href="PersonalItems/index.html"><span>Personal Items</span><span>➜</span></a>
+    </nav>
   </main>
 
-  <footer class="footer">
-    <div class="container">© <span id="y"></span> English Practice Zone</div>
-  </footer>
-
-  <script>
-    // List of bedroom items with matching image/audio filenames
-    const ITEMS = [
-      { word: "Bed", img: "bed.png", audio: "bed.mp3" },
-      { word: "Pillow", img: "pillow.png", audio: "pillow.mp3" },
-      { word: "Sheet", img: "sheet.png", audio: "sheet.mp3" },
-      { word: "Blanket", img: "blanket.png", audio: "blanket.mp3" },
-      { word: "Closet", img: "closet.png", audio: "closet.mp3" },
-      { word: "Lamp", img: "lamp.png", audio: "lamp.mp3" }
-    ];
-
-    function addCard({ word, img, audio }) {
-      const div = document.createElement("div");
-      div.className = "card";
-      div.innerHTML = `
-        <figure><img src="img/${img}" alt="${word}"></figure>
-        <div class="label">
-          <span class="word">${word}</span>
-          <button class="speak" data-audio="${word}">🔊</button>
-        </div>
-        <audio id="audio-${word}" preload="auto">
-          <source src="audio/${audio}" type="audio/mpeg">
-        </audio>
-      `;
-      document.getElementById("cards").appendChild(div);
-    }
-
-    ITEMS.forEach(addCard);
-  </script>
+  <footer class="footer"><div class="container">© <span id="y"></span> English Practice Zone</div></footer>
   <script src="../../assets/site.js"></script>
 </body>
 </html>
