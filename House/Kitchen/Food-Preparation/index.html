@@ -20,24 +20,32 @@
   <script>
     const ITEMS = [
       { word: "Cutting board", img: "cutting-board.png", audio: "cutting-board.mp3" },
-      { word: "Kitchen Knife", img: "kitchen-knife.png", audio: "kitchen-knife.mp3" },
+      { word: "Kitchen knife", img: "kitchen-knife.png", audio: "kitchen-knife.mp3" },
       { word: "Peeler", img: "peeler.png", audio: "peeler.mp3" },
-      { word: "Measuring Cup", img: "measuring-cup.png", audio: "measuring-cup.mp3" },
-      { word: "Measuring Spoon", img: "measuring-spoon.png", audio: "measuring-spoon.mp3" },
-      { word: "Mixing Bowl", img: "mixing-bowl.png", audio: "mixing-bowl.mp3" },
-      { word: "Colander", img: "colander.png", audio: "colander.mp3" }
-      { word: "Strainer", img: "strainer.png", audio: "strainer.mp3" }
+      { word: "Measuring cup", img: "measuring-cup.png", audio: "measuring-cup.mp3" },
+      { word: "Measuring spoon", img: "measuring-spoon.png", audio: "measuring-spoon.mp3" },
+      { word: "Mixing bowl", img: "mixing-bowl.png", audio: "mixing-bowl.mp3" },
+      { word: "Colander", img: "colander.png", audio: "colander.mp3" },
+      { word: "Strainer", img: "strainer.png", audio: "strainer.mp3" },
       { word: "Funnel", img: "funnel.png", audio: "funnel.mp3" }
     ];
+
     function addCard({ word, img, audio }) {
-      const div = document.createElement("div"); div.className = "card";
+      const div = document.createElement("div");
+      div.className = "card";
       div.innerHTML = `
         <figure><img src="img/${img}" alt="${word}"></figure>
-        <div class="label"><span class="word">${word}</span>
-        <button class="speak" data-audio="${word}">🔊</button></div>
-        <audio id="audio-${word}"><source src="audio/${audio}" type="audio/mpeg"></audio>`;
+        <div class="label">
+          <span class="word">${word}</span>
+          <button class="speak" data-audio="${word}">🔊</button>
+        </div>
+        <audio id="audio-${word}" preload="auto">
+          <source src="audio/${audio}" type="audio/mpeg">
+        </audio>
+      `;
       document.getElementById("cards").appendChild(div);
     }
+
     ITEMS.forEach(addCard);
   </script>
   <script src="../../../assets/site.js"></script>
