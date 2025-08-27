@@ -15,42 +15,16 @@
   </header>
 
   <main class="container">
-    <div class="grid cards" id="cards"></div>
+    <nav class="grid links">
+      <a class="link-card" href="Appliances/index.html"><span>Appliances</span><span>➜</span></a>
+      <a class="link-card" href="CookingUtensils/index.html"><span>Cooking Utensils</span><span>➜</span></a>
+      <a class="link-card" href="EatingUtensils/index.html"><span>Eating Utensils</span><span>➜</span></a>
+      <a class="link-card" href="FoodPreparation/index.html"><span>Food Preparation</span><span>➜</span></a>
+      <a class="link-card" href="Cookware/index.html"><span>Cookware</span><span>➜</span></a>
+    </nav>
   </main>
 
-  <footer class="footer">
-    <div class="container">© <span id="y"></span> English Practice Zone</div>
-  </footer>
-
-  <script>
-    // List of kitchen items with matching image/audio filenames
-    const ITEMS = [
-      { word: "Oven", img: "oven.png", audio: "oven.mp3" },
-      { word: "Refrigerator", img: "fridge.png", audio: "fridge.mp3" },
-      { word: "Sink", img: "sink.png", audio: "sink.mp3" },
-      { word: "Stove", img: "stove.png", audio: "stove.mp3" },
-      { word: "Microwave", img: "microwave.png", audio: "microwave.mp3" },
-      { word: "Spoon", img: "spoon.png", audio: "spoon.mp3" }
-    ];
-
-    function addCard({ word, img, audio }) {
-      const div = document.createElement("div");
-      div.className = "card";
-      div.innerHTML = `
-        <figure><img src="img/${img}" alt="${word}"></figure>
-        <div class="label">
-          <span class="word">${word}</span>
-          <button class="speak" data-audio="${word}">🔊</button>
-        </div>
-        <audio id="audio-${word}" preload="auto">
-          <source src="audio/${audio}" type="audio/mpeg">
-        </audio>
-      `;
-      document.getElementById("cards").appendChild(div);
-    }
-
-    ITEMS.forEach(addCard);
-  </script>
+  <footer class="footer"><div class="container">© <span id="y"></span> English Practice Zone</div></footer>
   <script src="../../assets/site.js"></script>
 </body>
 </html>
