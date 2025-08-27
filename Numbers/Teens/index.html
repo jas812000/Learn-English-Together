@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>English Practice Zone — Teens (10–19)</title>
+  <link rel="stylesheet" href="../../assets/site.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Teens (10–19)</h1>
+      <p class="muted"><a href="../index.html">← Numbers</a> • <a href="../../index.html">Home</a></p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid cards" id="cards"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> English Practice Zone</div>
+  </footer>
+
+  <script>
+    // 10–19: filenames 10.png..19.png and 10.mp3..19.mp3
+    const ITEMS = [
+      [10, "ten"], [11, "eleven"], [12, "twelve"], [13, "thirteen"], [14, "fourteen"],
+      [15, "fifteen"], [16, "sixteen"], [17, "seventeen"], [18, "eighteen"], [19, "nineteen"]
+    ];
+
+    for (const [n, w] of ITEMS) {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `
+        <figure><img src="img/${n}.png" alt="${w}"></figure>
+        <div class="label">
+          <span class="word">${w}</span>
+          <button class="speak" data-audio="${n}" aria-label="Play ${w}">🔊</button>
+        </div>
+        <audio id="audio-${n}" preload="auto">
+          <source src="audio/${n}.mp3" type="audio/mpeg">
+        </audio>
+      `;
+      document.getElementById("cards").appendChild(div);
+    }
+  </script>
+  <script src="../../assets/site.js"></script>
+</body>
+</html>
