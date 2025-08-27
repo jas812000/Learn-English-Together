@@ -9,7 +9,12 @@
 <body>
   <header class="header">
     <div class="container">
+      <!-- Thai -->
+      <h1>แคชเชียร์ / ชำระเงิน</h1>
+      <p class="muted">เรียนคำศัพท์เวลาจ่ายเงิน</p>
+      <!-- English -->
       <h1>Checkout</h1>
+      <p class="muted">Practice checkout vocabulary</p>
       <p class="muted"><a href="../index.html">← Supermarket</a> • <a href="../../index.html">Home</a></p>
     </div>
   </header>
@@ -27,11 +32,9 @@
     ];
     function addCard({ word, img, audio }) {
       const div = document.createElement("div"); div.className = "card";
-      div.innerHTML = `
-        <figure><img src="img/${img}" alt="${word}"></figure>
-        <div class="label"><span class="word">${word}</span>
-        <button class="speak" data-audio="${word}">🔊</button></div>
-        <audio id="audio-${word}"><source src="audio/${audio}" type="audio/mpeg"></audio>`;
+      div.innerHTML = `<figure><img src="img/${img}" alt="${word}"></figure>
+        <div class="label"><span class="word">${word}</span><button class="speak" data-audio="${word}">🔊</button></div>
+        <audio id="audio-${word}" preload="auto"><source src="audio/${audio}" type="audio/mpeg"></audio>`;
       document.getElementById("cards").appendChild(div);
     }
     ITEMS.forEach(addCard);
