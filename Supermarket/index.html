@@ -15,25 +15,45 @@
   </header>
 
   <main class="container">
-    <div class="grid cards">
-      <!-- Example card -->
-      <div class="card">
-        <figure><img src="img/cart.png" alt="Shopping cart"></figure>
-        <div class="label">
-          <span class="word">cart</span>
-          <button class="speak" data-audio="cart" aria-label="Play pronunciation for cart">🔊</button>
-        </div>
-        <audio id="audio-cart" preload="auto">
-          <source src="audio/cart.mp3" type="audio/mpeg" />
-        </audio>
-      </div>
-    </div>
+    <div class="grid cards" id="cards"></div>
   </main>
 
   <footer class="footer">
     <div class="container">© <span id="y"></span> English Practice Zone</div>
   </footer>
 
+  <script>
+    // Add or change items as you like; filenames should match.
+    const ITEMS = [
+      { word: "cart", img: "cart.png", audio: "cart.mp3" },
+      { word: "basket", img: "basket.png", audio: "basket.mp3" },
+      { word: "cashier", img: "cashier.png", audio: "cashier.mp3" },
+      { word: "receipt", img: "receipt.png", audio: "receipt.mp3" },
+      { word: "milk", img: "milk.png", audio: "milk.mp3" },
+      { word: "bread", img: "bread.png", audio: "bread.mp3" },
+      { word: "eggs", img: "eggs.png", audio: "eggs.mp3" },
+      { word: "vegetables", img: "vegetables.png", audio: "vegetables.mp3" },
+      { word: "fruits", img: "fruits.png", audio: "fruits.mp3" }
+    ];
+
+    function addCard({ word, img, audio }) {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `
+        <figure><img src="img/${img}" alt="${word}"></figure>
+        <div class="label">
+          <span class="word">${word}</span>
+          <button class="speak" data-audio="${word}" aria-label="Play ${word}">🔊</button>
+        </div>
+        <audio id="audio-${word}" preload="auto">
+          <source src="audio/${audio}" type="audio/mpeg">
+        </audio>
+      `;
+      document.getElementById("cards").appendChild(div);
+    }
+
+    ITEMS.forEach(addCard);
+  </script>
   <script src="../assets/site.js"></script>
 </body>
 </html>
