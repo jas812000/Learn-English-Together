@@ -30,7 +30,7 @@
       { word: "Wok", image: "wok.png", audio: "wok.mp3" },
       { word: "Baking Sheet", image: "baking_sheet.png", audio: "baking_sheet.mp3" }
     ];
-    function addCard({ word, img, audio }) {
+    function addCard({ word, image, audio }) {
       const div = document.createElement("div"); div.className = "card";
       div.innerHTML = `
         <figure><image src="image/${img}" alt="${word}"></figure>
