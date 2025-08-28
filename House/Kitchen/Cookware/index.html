@@ -24,16 +24,16 @@
 
   <script>
     const ITEMS = [
-      { word: "Pot", img: "pot.png", audio: "pot.mp3" },
-      { word: "Frying Pan", img: "frying_pan.png", audio: "frying_pan.mp3" },
-      { word: "Saucepan", img: "saucepan.png", audio: "saucepan.mp3" },
-      { word: "Wok", img: "wok.png", audio: "wok.mp3" },
-      { word: "Baking Sheet", img: "baking_sheet.png", audio: "baking_sheet.mp3" }
+      { word: "Pot", image: "pot.png", audio: "pot.mp3" },
+      { word: "Frying Pan", image: "frying_pan.png", audio: "frying_pan.mp3" },
+      { word: "Saucepan", image: "saucepan.png", audio: "saucepan.mp3" },
+      { word: "Wok", image: "wok.png", audio: "wok.mp3" },
+      { word: "Baking Sheet", image: "baking_sheet.png", audio: "baking_sheet.mp3" }
     ];
     function addCard({ word, img, audio }) {
       const div = document.createElement("div"); div.className = "card";
       div.innerHTML = `
-        <figure><img src="img/${img}" alt="${word}"></figure>
+        <figure><image src="image/${img}" alt="${word}"></figure>
         <div class="label"><span class="word">${word}</span>
         <button class="speak" data-audio="${word}">🔊</button></div>
         <audio id="audio-${word}"><source src="audio/${audio}" type="audio/mpeg"></audio>`;
