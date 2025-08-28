@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,27 +10,26 @@
 <body>
   <header class="header">
     <div class="container">
-      <h1>Hundreds (100–900)</h1>
+      <h1>
+        Hundreds (100–900)
+        <button class="speak" data-audio="hundreds">🔊</button>
+      </h1>
+      <audio id="audio-hundreds" preload="auto">
+        <source src="audio/hundreds.mp3" type="audio/mpeg">
+      </audio>
       <p class="muted"><a href="../index.html">← Numbers</a> • <a href="../../index.html">Home</a></p>
     </div>
   </header>
 
-  <main class="container">
-    <div class="grid cards" id="cards"></div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">© <span id="y"></span> English Practice Zone</div>
-  </footer>
+  <main class="container"><div class="grid cards" id="cards"></div></main>
+  <footer class="footer"><div class="container">© <span id="y"></span> English Practice Zone</div></footer>
 
   <script>
-    // 100–900 by hundreds: filenames 100.png..900.png and 100.mp3..900.mp3
     const ITEMS = [
       [100, "One Hundred"], [200, "Two Hundred"], [300, "Three Hundred"],
       [400, "Four Hundred"], [500, "Five Hundred"], [600, "Six Hundred"],
       [700, "Seven Hundred"], [800, "Eight Hundred"], [900, "Nine Hundred"]
     ];
-
     for (const [n, w] of ITEMS) {
       const div = document.createElement("div");
       div.className = "card";
@@ -41,8 +41,7 @@
         </div>
         <audio id="audio-${n}" preload="auto">
           <source src="audio/${n}.mp3" type="audio/mpeg">
-        </audio>
-      `;
+        </audio>`;
       document.getElementById("cards").appendChild(div);
     }
   </script>
