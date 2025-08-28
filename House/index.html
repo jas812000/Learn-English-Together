@@ -8,22 +8,24 @@
 </head>
 <body>
   <header class="header">
-    <div class="container">
-      <!-- Thai -->
-      <h1>บ้าน</h1>
-      <p class="muted">เลือกห้องหรือบริเวณในบ้าน</p>
-      <!-- English -->
-      <h1>
-        House
-        <button class="speak" data-audio="house" aria-label="Play 'House'">🔊</button>
-      </h1>
-      <audio id="audio_house" preload="auto">
-        <source src="audio/house.mp3" type="audio/mpeg">
-      </audio>
-      <p class="muted">Choose a room or area</p>
-      <p class="muted"><a href="../index.html">← Home</a></p>
-    </div>
-  </header>
+  <div class="container">
+    <!-- Thai -->
+    <h1>บ้าน</h1>
+    <p class="muted">เลือกห้องหรือบริเวณในบ้าน</p>
+
+    <!-- English + speaker -->
+    <h1>
+      House
+      <button class="speak" data-audio="house" aria-label="Play 'House'">🔊</button>
+    </h1>
+    <audio id="audio-house" preload="auto">
+      <source src="audio/house.mp3" type="audio/mpeg">
+    </audio>
+
+    <p class="muted">Choose a room or area</p>
+    <p class="muted"><a href="../index.html">← Home</a></p>
+  </div>
+</header>
 
   <main class="container">
     <nav class="grid links">
