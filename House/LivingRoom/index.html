@@ -9,18 +9,18 @@
 <body>
   <header class="header">
     <div class="container">
-      <h1>Living Room</h1>
+      <h1>ห้องนั่งเล่น / Living Room
+        <button class="speak" data-audio="living-room">🔊</button>
+      </h1>
+      <audio id="audio-living-room" preload="auto">
+        <source src="audio/living-room.mp3" type="audio/mpeg">
+      </audio>
       <p class="muted"><a href="../index.html">← House</a> • <a href="../../index.html">Home</a></p>
     </div>
   </header>
 
-  <main class="container">
-    <div class="grid cards" id="cards"></div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">© <span id="y"></span> English Practice Zone</div>
-  </footer>
+  <main class="container"><div class="grid cards" id="cards"></div></main>
+  <footer class="footer"><div class="container">© <span id="y"></span> English Practice Zone</div></footer>
 
   <script>
     // List of living room items with matching image/audio filenames
