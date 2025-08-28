@@ -9,18 +9,18 @@
 <body>
   <header class="header">
     <div class="container">
-      <h1>Bathroom</h1>
+      <h1>ห้องน้ำ / Bathroom
+        <button class="speak" data-audio="bathroom">🔊</button>
+      </h1>
+      <audio id="audio-bathroom" preload="auto">
+        <source src="audio/bathroom.mp3" type="audio/mpeg">
+      </audio>
       <p class="muted"><a href="../index.html">← House</a> • <a href="../../index.html">Home</a></p>
     </div>
   </header>
 
-  <main class="container">
-    <div class="grid cards" id="cards"></div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">© <span id="y"></span> English Practice Zone</div>
-  </footer>
+  <main class="container"><div class="grid cards" id="cards"></div></main>
+  <footer class="footer"><div class="container">© <span id="y"></span> English Practice Zone</div></footer>
 
   <script>
     // List of bathroom items with matching image/audio filenames
