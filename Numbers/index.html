@@ -12,8 +12,16 @@
       <!-- Thai -->
       <h1>ตัวเลข</h1>
       <p class="muted">เลือกชุดตัวเลขเพื่อฝึกฟังและอ่าน</p>
-      <!-- English -->
-      <h1>Numbers</h1>
+
+      <!-- English with pronunciation -->
+      <h1>
+        Numbers
+        <button class="speak" data-audio="numbers">🔊</button>
+      </h1>
+      <audio id="audio-numbers" preload="auto">
+        <source src="audio/numbers.mp3" type="audio/mpeg">
+      </audio>
+
       <p class="muted">Choose a set to practice</p>
       <p class="muted"><a href="../index.html">← Home</a></p>
     </div>
