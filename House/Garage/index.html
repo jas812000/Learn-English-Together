@@ -9,18 +9,18 @@
 <body>
   <header class="header">
     <div class="container">
-      <h1>Garage</h1>
+      <h1>โรงรถ / Garage
+        <button class="speak" data-audio="garage">🔊</button>
+      </h1>
+      <audio id="audio-garage" preload="auto">
+        <source src="audio/garage.mp3" type="audio/mpeg">
+      </audio>
       <p class="muted"><a href="../index.html">← House</a> • <a href="../../index.html">Home</a></p>
     </div>
   </header>
 
-  <main class="container">
-    <div class="grid cards" id="cards"></div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">© <span id="y"></span> English Practice Zone</div>
-  </footer>
+  <main class="container"><div class="grid cards" id="cards"></div></main>
+  <footer class="footer"><div class="container">© <span id="y"></span> English Practice Zone</div></footer>
 
   <script>
     // List of garage items with matching image/audio filenames
