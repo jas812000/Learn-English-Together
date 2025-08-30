@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>English Practice Zone — Weather</title>
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <!-- Thai -->
+    <h1>สภาพอากาศ</h1>
+    <p class="muted">เลือกหมวดย่อยเกี่ยวกับสภาพอากาศ</p>
+
+    <!-- English + speaker -->
+    <h1>
+      Weather
+      <button class="speak" data-audio="weather" aria-label="Play 'Weather'">🔊</button>
+    </h1>
+    <audio id="audio-weather" preload="auto">
+      <source src="audio/weather.mp3" type="audio/mpeg">
+    </audio>
+
+    <p class="muted">Choose a subcategory</p>
+    <p class="muted"><a href="../index.html">← Home</a></p>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="grid links">
+    <!-- หมวดย่อย / Weather Subcategories -->
+    <!-- <a class="link-card" href="Normal/index.html"><span>สภาพอากาศทั่วไป / Normal Conditions</span><span>➜</span></a> -->
+    <!-- <a class="link-card" href="Severe/index.html"><span>สภาพอากาศรุนแรง / Severe Weather</span><span>➜</span></a> -->
+    <!-- <a class="link-card" href="SeasonsClimate/index.html"><span>ฤดูกาลและภูมิอากาศ / Seasons & Climate</span><span>➜</span></a> -->
+  </nav>
+</main>
+
+<footer class="footer"><div class="container">© <span id="y"></span> English Practice Zone</div></footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
