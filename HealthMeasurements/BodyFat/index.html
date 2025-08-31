@@ -22,6 +22,23 @@ const ITEMS = [
   { word:"Lean Body Mass", img:"lean_mass.png", audio:"lean_body_mass.mp3" },
   { word:"Chart", img:"chart.png", audio:"chart.mp3" }
 ];
-function addCard(i){const d=document.createElement("div");d.className="card";d.innerHTML=`<figure><img src="image/${i.img}" alt="${i.word}"></figure><div class="label"><span class="word">${i.word}</span><button class="speak" data-audio="${i.word}">🔊</button></div><audio id="audio-${i.word}" preload="auto"><source src="audio/${i.audio}" type="audio/mpeg"></audio>`;document.getElementById("cards").appendChild(d);} ITEMS.forEach(addCard);
-</script><script src="../../assets/site.js"></script>
-</body></html>
+function addCard({ word, img, audio }) {
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `
+      <figure><img src="image/${img}" alt="${word}"></figure>
+      <div class="label">
+        <span class="word">${word}</span>
+        <button class="speak" data-audio="${word}" aria-label="Play '${word}'">🔊</button>
+      </div>
+      <audio id="audio-${word}" preload="auto">
+        <source src="audio/${audio}" type="audio/mpeg">
+      </audio>
+    `;
+    document.getElementById("cards").appendChild(div);
+  }
+  ITEMS.forEach(addCard);
+</script>
+<script src="../../assets/site.js"></script>
+</body>
+</html>
